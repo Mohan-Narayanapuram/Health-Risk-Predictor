@@ -1,0 +1,7 @@
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+.card {
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(30, 41, 59, 0.06);
+}

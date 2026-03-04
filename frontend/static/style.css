@@ -1,0 +1,196 @@
+/* ==========================
+   🌿 HEALTH THEMED DASHBOARD UI
+   ========================== */
+
+/* ---------- GLOBAL ---------- */
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  color: #1b4332;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  /* Soft gradient background */
+  background: radial-gradient(circle at top left, #e0f7fa, #f1fff5 40%, #e8f5e9 70%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+
+  position: relative;
+}
+
+/* Subtle moving background glow accents */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(100px);
+  animation: floatGlow 20s infinite alternate ease-in-out;
+}
+body::before {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -100px;
+  background: #b2dfdb;
+}
+body::after {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -150px;
+  background: #a5d6a7;
+}
+@keyframes floatGlow {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -30px); }
+  100% { transform: translate(0, 0); }
+}
+
+h2, h5 {
+  font-weight: 600;
+}
+
+h2.text-primary {
+  color: #00796b !important; /* Calm teal */
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background: linear-gradient(90deg, #009688, #4caf50);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff !important;
+}
+.nav-link {
+  color: #f1f1f1 !important;
+  transition: 0.3s;
+}
+.nav-link:hover {
+  color: #c8facc !important;
+}
+
+/* ---------- CARD DESIGN ---------- */
+.card {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(76, 175, 80, 0.15);
+}
+
+/* ---------- CARD HEADERS ---------- */
+.card-header.bg-primary {
+  background: linear-gradient(90deg, #26a69a, #81c784) !important;
+}
+.card-header.bg-danger {
+  background: linear-gradient(90deg, #ef5350, #f48fb1) !important;
+}
+.card-header.bg-success {
+  background: linear-gradient(90deg, #2e7d32, #81c784) !important;
+}
+.card-header.bg-info {
+  background: linear-gradient(90deg, #0288d1, #4dd0e1) !important;
+}
+.card-header.bg-secondary {
+  background: linear-gradient(90deg, #607d8b, #90a4ae) !important;
+}
+.card-header {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+}
+
+/* ---------- TABLE ---------- */
+.table th, .table td {
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(200, 230, 201, 0.2);
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(129, 199, 132, 0.3);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-outline-primary {
+  border-color: #26a69a;
+  color: #26a69a;
+  transition: 0.3s;
+}
+.btn-outline-primary:hover {
+  background: linear-gradient(90deg, #26a69a, #81c784);
+  color: white;
+}
+.btn-primary {
+  background: linear-gradient(90deg, #26a69a, #81c784);
+  border: none;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #81c784, #26a69a);
+  transform: scale(1.03);
+}
+
+/* ---------- SHOW MORE BUTTON ---------- */
+#showMoreBtn {
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+#showMoreBtn:hover {
+  background-color: #26a69a;
+  color: white;
+  box-shadow: 0 0 10px rgba(38, 166, 154, 0.6);
+}
+
+/* ---------- CHART CONTAINERS ---------- */
+.card canvas {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+.card:hover canvas {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(38, 166, 154, 0.2);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: linear-gradient(90deg, #4caf50, #009688);
+  color: #fff;
+  text-align: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  margin-top: auto;
+  padding: 10px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+footer strong {
+  color: #e8f5e9;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  h2.text-primary {
+    font-size: 1.4rem;
+  }
+  .card {
+    border-radius: 12px;
+  }
+}

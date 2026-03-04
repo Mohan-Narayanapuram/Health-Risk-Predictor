@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" modified="2025-11-05T12:00:00Z" agent="5.0 (Macintosh)" version="20.3.0" editor="5.0.0">
+  <diagram id="HealthRiskPrediction" name="Health Risk Prediction Architecture">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="dataset" value="Framingham Dataset" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="40" width="250" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="preprocess" value="Data Preprocessing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="250" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="scaler" value="Standardization (Scaler)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="200" width="250" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="model_train" value="Model Training (Logistic Regression + KMeans)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="320" y="280" width="450" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="output" value="CHD Probability + Health Score" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="380" width="250" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="flask" value="Flask Web Application (User Interface &amp; Dashboard)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#4a90e2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="300" y="460" width="490" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="insurance" value="Insurance Recommendation (HDFC ERGO, Star Health, Niva Bupa, etc.)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="260" y="560" width="570" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333333;" edge="1" source="dataset" target="preprocess" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333333;" edge="1" source="preprocess" target="scaler" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333333;" edge="1" source="scaler" target="model_train" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333333;" edge="1" source="model_train" target="output" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333333;" edge="1" source="output" target="flask" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;strokeColor=#333333;" edge="1" source="flask" target="insurance" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

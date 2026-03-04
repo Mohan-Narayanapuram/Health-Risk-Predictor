@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediction Results</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/">Health Risk Predictor</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Predict Again</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="text-primary">Health Risk Prediction Result</h2>
+            <p class="text-muted">Your personalized CHD risk assessment and insurance recommendation</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- CHD Probability Card -->
+            <div class="col-md-4">
+                <div class="card text-center shadow-sm">
+                    <div class="card-header bg-danger text-white">CHD Probability</div>
+                    <div class="card-body">
+                        <h3 class="card-title">{{ details.chd_prob }}%</h3>
+                        {% if details.chd_prob > 20 %}
+                            <p class="text-danger fw-bold">High Risk</p>
+                            <p>Consult a cardiologist and consider preventive checkups.</p>
+                        {% elif details.chd_prob > 10 %}
+                            <p class="text-warning fw-bold">Moderate Risk</p>
+                            <p>Maintain healthy lifestyle and monitor regularly.</p>
+                        {% else %}
+                            <p class="text-success fw-bold">Low Risk</p>
+                            <p>Keep up your healthy habits!</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Score Card -->
+            <div class="col-md-4">
+                <div class="card text-center shadow-sm">
+                    <div class="card-header bg-success text-white">Health Score</div>
+                    <div class="card-body">
+                        <h3 class="card-title">{{ details.health_score }} / 100</h3>
+                        {% if details.health_score < 50 %}
+                            <p class="text-danger fw-bold">Needs Attention</p>
+                        {% elif details.health_score < 75 %}
+                            <p class="text-warning fw-bold">Average</p>
+                        {% else %}
+                            <p class="text-success fw-bold">Good</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insurance Plan Card -->
+            <div class="col-md-4">
+                <div class="card text-center shadow-sm">
+                    <div class="card-header bg-info text-white">Recommended Insurance Plan</div>
+                    <div class="card-body">
+                        {% if details.plan == "Basic Plan" %}
+                            <h4 class="card-title text-primary">HDFC ERGO General Insurance</h4>
+                            <p>Sum-Insured: ₹3–7.5 lakh</p>
+                            <p>Approx. Premium: ₹350–₹650/month</p>
+                            <p class="fw-bold text-success">Suitable for low-risk individuals.</p>
+                        {% elif details.plan == "Standard Plan" %}
+                            <h4 class="card-title text-primary">Star Health and Allied Insurance</h4>
+                            <p>Sum-Insured: ₹10 lakh</p>
+                            <p>Approx. Premium: ₹550–₹900/month</p>
+                            <p class="fw-bold text-warning">Balanced coverage for moderate risk.</p>
+                        {% elif details.plan == "Premium Plan" %}
+                            <h4 class="card-title text-primary">Niva Bupa Health Insurance</h4>
+                            <p>Sum-Insured: ₹30–50 lakh</p>
+                            <p>Approx. Premium: ₹1,412/month</p>
+                            <p class="fw-bold text-danger">High coverage recommended for elevated risk.</p>
+                        {% else %}
+                            <h4 class="card-title text-primary">New India Assurance</h4>
+                            <p>Sum-Insured: ₹50 lakh – ₹1 crore</p>
+                            <p>Approx. Premium: ₹1,863/month</p>
+                            <p class="fw-bold text-danger">Extensive coverage for critical risk cases.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center mt-5">
+            <a href="/" class="btn btn-primary btn-lg me-2">Predict Another</a>
+            <a href="/dashboard" class="btn btn-secondary btn-lg">View Dashboard</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

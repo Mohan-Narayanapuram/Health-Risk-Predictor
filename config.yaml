@@ -1,0 +1,5 @@
+data_path: data/raw/projectdataset.csv
+processed_path: data/processed/df_cleaned.csv
+n_clusters: 3
+alpha: 0.6
+random_state: 42
