@@ -102,11 +102,11 @@ The clustering model divides individuals into:
 
 | Metric | Value |
 |------|------|
-| Accuracy | 85% |
-| Precision | ~84% |
-| Recall | ~54% |
-| F1 Score | ~53% |
-| ROC-AUC | ~0.88 |
+| Accuracy | ~85% |
+| Precision | ~91% |
+| Recall | ~82% |
+| F1 Score | ~15% |
+| ROC-AUC | ~0.73 |
 
 ---
 
