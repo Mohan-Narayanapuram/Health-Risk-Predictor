@@ -116,7 +116,7 @@ See architecture diagram:
 
 ```
 architecture/
-Health_Risk_System_Architecture.drawio
+Health_Risk_System_Architecture.png
 ```
 
 ---
