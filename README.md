@@ -130,25 +130,89 @@ The system dashboard visualizes:
 
 ---
 
-## Running the Project
+## Local Setup and Running the Project
 
-### 1 Install dependencies
+Follow the steps below to run the Health Risk Predictor on your local machine.
 
-```
+### 1. Clone the Repository
+
+Open a terminal and run:
+
+git clone https://github.com/Mohan-Narayanapuram/health-risk-predictor.git
+
+Then navigate into the project directory:
+
+cd health-risk-predictor
+
+---
+
+### 2. Create a Virtual Environment
+
+Create a Python virtual environment to isolate project dependencies.
+
+python -m venv venv
+
+---
+
+### 3. Activate the Virtual Environment
+
+Mac / Linux:
+
+source venv/bin/activate
+
+Windows:
+
+venv\Scripts\activate
+
+After activation, your terminal prompt should display something similar to:
+
+(venv)
+
+---
+
+### 4. Install Required Dependencies
+
+Install all required Python packages using the requirements file.
+
 pip install -r requirements.txt
-```
 
-### 2 Run the application
+---
 
-```
+### 5. Run the Flask Application
+
+Start the application by running:
+
 python frontend/app.py
-```
 
-### 3 Open browser
+---
 
-```
+### 6. Open the Application in a Browser
+
+Once the server starts successfully, open a web browser and go to:
+
 http://127.0.0.1:5000
-```
+
+This will open the Health Risk Predictor interface where you can enter health parameters and obtain predictions.
+
+---
+
+### Expected Workflow
+
+1. Enter the required health information in the input form.
+2. Submit the form to generate predictions.
+3. View the predicted CHD probability and calculated health score.
+4. Review the recommended insurance plan.
+5. Access the dashboard page to see model statistics and visualizations.
+
+---
+
+### Troubleshooting
+
+If port 5000 is already in use, identify the running process:
+
+lsof -i :5000
+
+Terminate the process or modify the port number in the Flask application.
 
 ---
 
