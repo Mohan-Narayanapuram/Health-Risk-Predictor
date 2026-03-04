@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20App-green)
+![Machine Learning](https://img.shields.io/badge/Machine-Learning-orange)
 # Health Risk Predictor
 
 A Machine Learning based system that predicts the **10-year risk of Coronary Heart Disease (CHD)** using health parameters and provides a **health score and insurance recommendation**.
